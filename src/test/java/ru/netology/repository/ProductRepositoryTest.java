@@ -13,7 +13,7 @@ class ProductRepositoryTest {
         private Smartphone phone = new Smartphone(2, "История успеха", 150_000, "Steve Jobs");
 
         @Test
-        void  shouldSaveOneItem() {
+        void  shouldSaveItem() {
             repository.save(fantasy);
             repository.save(phone);
 

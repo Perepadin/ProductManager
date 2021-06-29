@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BookTest {
 
+    Book book1 = new Book(1, "Сиала", 700, "Пехов");
+    Book book2 = new Book(1, "Грон", 500, "Злотников");
 
     @Test
     void test() {
@@ -16,12 +18,12 @@ class BookTest {
     public void shouldHaveAllFieldsAndMethodFromSuperClass() {
         Book book = new Book();
         book.setId(1);
-        book.setName("Фэнтези");
+        book.setName("Страж");
         book.setPrice(150);
         book.setBookAuthor("Алекей Пехов");
 
         assertEquals(1, book.getId());
-        assertEquals("Фэнтези", book.getName());
+        assertEquals("Страж", book.getName());
         assertEquals(150, book.getPrice());
         assertEquals("Алекей Пехов", book.getBookAuthor());
     }
@@ -46,4 +48,15 @@ class BookTest {
             System.out.println("Not found");
         }
     }
+
+    @Test
+    public void shouldMatch (){
+        assertTrue(book1.matches("ла"));
+    }
+
+    @Test
+    public void shouldNotMatch (){
+        assertFalse(book2.matches("зла"));
+    }
+
 }

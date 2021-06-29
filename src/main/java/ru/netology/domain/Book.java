@@ -17,4 +17,16 @@ public class Book extends Product {
         super(id, name, price);
         this.bookAuthor = bookAuthor;
     }
+
+    @Override
+    public boolean matches(String search) {
+        return super.matches(search) || bookAuthor.contains(search);
+    }
+
+//    public boolean matchesBook(Product product, String search) {
+//
+//        Book book = (Book) product;
+//        return book.getName().equalsIgnoreCase(search) ||
+//                book.getBookAuthor().equalsIgnoreCase(search);
+//    }
 }

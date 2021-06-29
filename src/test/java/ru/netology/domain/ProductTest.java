@@ -6,11 +6,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
 
+    Product product1 = new Product(1, "Золото", 700);
+    Product product2 = new Product(2, "Платина", 500);
+
     @Test
 
     public void shouldUseEquals() {
-        Product first = new Product(1, "Product I", 500);
-        Product second = new Product(1, "Product I", 500);
-        assertEquals(first, second);
+        Product product1 = new Product(1, "Серебро", 500);
+        Product product2 = new Product(1, "Серебро", 500);
+        assertEquals(product1, product2);
+    }
+
+    @Test
+    public void shouldMatch (){
+        assertTrue(product1.matches("ло"));
+    }
+
+    @Test
+    public void shouldNotMatch (){
+        assertFalse(product1.matches("да"));
     }
 }
