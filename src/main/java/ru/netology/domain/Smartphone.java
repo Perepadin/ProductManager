@@ -24,11 +24,4 @@ public class Smartphone extends Product {
     public boolean matches(String search) {
         return super.matches(search) || Manufacturer.contains(search);
     }
-
-//    public boolean matchesSmartphone(Product product, String search) {
-//
-//        Smartphone Smartphone = (Smartphone) product;
-//        return Smartphone.getName().equalsIgnoreCase(search) ||
-//                Smartphone.getManufacturer().equalsIgnoreCase(search);
-//    }
 }
