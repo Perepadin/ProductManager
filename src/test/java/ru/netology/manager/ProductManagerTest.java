@@ -15,11 +15,11 @@ class ProductManagerTest {
     ProductRepository productRepository = new ProductRepository();
     ProductManager productManager = new ProductManager(productRepository);
 
-    Book book1 = new Book(0, "Конные гусары", 500, "Соня Смитт");
+    Book book1 = new Book(0, "Мираж", 500, "Соня Смитт");
     Book book2 = new Book(1, "Страж", 199, "Алексей Пехов");
     Smartphone smartphone1 = new Smartphone(2, "Iphone19", 99000, "Apple");
     Smartphone smartphone2 = new Smartphone(3, "Iphone15", 70200, "Apple");
-    Smartphone smartphone3 = new Smartphone(3, "Sony21", 10200, "Сони");
+    Smartphone smartphone3 = new Smartphone(4, "Sony21", 10200, "Сони");
 
     @Test
     void searchByMany() {

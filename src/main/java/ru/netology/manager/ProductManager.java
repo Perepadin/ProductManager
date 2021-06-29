@@ -41,15 +41,6 @@ public class ProductManager {
         repository.save(item);
     }
 
-//    private Product[] actionSearchBy(Product product) {
-//        Product[] result = new Product[0];
-//        Product[] tmp = new Product[result.length + 1];
-//        // используйте System.arraycopy, чтобы скопировать всё из result в tmp
-//        tmp[tmp.length - 1] = product;
-//        arraycopy(tmp, 0, result, 0, result.length);
-//        return result;
-//    }
-
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repository.findAll()) {
@@ -57,14 +48,12 @@ public class ProductManager {
                 Product[] tmp = new Product[result.length + 1];
                 // используйте System.arraycopy, чтобы скопировать всё из result в tmp
                 System.arraycopy(result, 0, tmp, 0, result.length);
-                // сделано
                 tmp[tmp.length - 1] = product;
                 result = tmp;
             }
         }
         return result;
     }
-
 
     public boolean matches(Product product, String search) {
         if (product instanceof Book) { // если в параметре product лежит объект класса Book

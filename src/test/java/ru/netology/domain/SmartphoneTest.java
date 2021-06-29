@@ -15,9 +15,14 @@ class SmartphoneTest {
     public void shouldHaveAllFieldsAndMethodFromSuperClass() {
         Smartphone smartphone = new Smartphone();
         smartphone.setId(1);
-        smartphone.setName("Новинка2021");
+        smartphone.setName("Iphone17");
         smartphone.setPrice(150_000);
-        smartphone.setManufacturer("Steve Jobs");
+        smartphone.setManufacturer("Apple");
+
+        assertEquals(1, smartphone.getId());
+        assertEquals("Iphone17", smartphone.getName());
+        assertEquals(150_000, smartphone.getPrice());
+        assertEquals("Apple", smartphone.getManufacturer());
     }
 
     @Test
