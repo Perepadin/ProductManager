@@ -8,34 +8,11 @@ import ru.netology.repository.ProductRepository;
 import static java.lang.System.arraycopy;
 
 public class ProductManager {
-
-    public ProductManager(ProductRepository repository, Product[] items) {
-        this.repository = repository;
-        this.items = items;
-    }
+    private ProductRepository repository = new ProductRepository();
 
     public ProductManager(ProductRepository repository) {
-    }
-
-    public ProductRepository getRepository() {
-        return repository;
-    }
-
-    public void setRepository(ProductRepository repository) {
         this.repository = repository;
     }
-
-    public Product[] getItems() {
-        return items;
-    }
-
-    public void setItems(Product[] items) {
-        this.items = items;
-    }
-
-
-    private ProductRepository repository = new ProductRepository();
-    private Product[] items = new Product[0];
 
     public void addProduct(Product item) {
         repository.save(item);
